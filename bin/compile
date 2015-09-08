@@ -223,3 +223,4 @@ set-default-env PYTHONPATH /app/
 
 # Symlink app's Procfile to root
 ln -s $ORIG_BUILD_DIR/Procfile $1/Procfile
+ln -s $ORIG_BUILD_DIR/.profile.d $1/.profile.d
