@@ -222,5 +222,5 @@ set-default-env PYTHONHASHSEED random
 set-default-env PYTHONPATH /app/
 
 # Symlink app's Procfile to root
-ln -s $ORIG_BUILD_DIR/Procfile $1/Procfile
-ln -s $ORIG_BUILD_DIR/.profile.d $1/.profile.d
+cp -r $ORIG_BUILD_DIR/Procfile $1/Procfile
+cp -r $ORIG_BUILD_DIR/.profile.d $1/.profile.d
