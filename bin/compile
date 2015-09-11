@@ -222,6 +222,6 @@ set-default-env PYTHONHASHSEED random
 set-default-env PYTHONPATH /app/
 
 # Symlink app's Procfile to root
-cp -r $ORIG_BUILD_DIR/Procfile $1/Procfile
-cp -r $ORIG_BUILD_DIR/.profile.d $1/.profile.d
-cp -r $ORIG_BUILD_DIR/.heroku $1/.heroku
+mv $ORIG_BUILD_DIR/Procfile $1/Procfile
+mv $ORIG_BUILD_DIR/.profile.d $1/.profile.d
+mv $ORIG_BUILD_DIR/.heroku $1/.heroku
