@@ -17,6 +17,9 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 ENV_DIR=$3
 
+if [ -f $ENV_DIR/APP_DIR ]; then
+    BUILD_DIR=$BUILD_DIR/$(cat $ENV_DIR/APP_DIR)
+fi
 
 CACHED_DIRS=".heroku"
 
@@ -220,3 +223,7 @@ set-env LD_LIBRARY_PATH '/app/.heroku/vendor/lib:/app/.heroku/python/lib:$LD_LIB
 set-default-env LANG en_US.UTF-8
 set-default-env PYTHONHASHSEED random
 set-default-env PYTHONPATH /app/
+
+mv $ORIG_BUILD_DIR/Procfile $1/Procfile
+mv $ORIG_BUILD_DIR/.profile.d $1/.profile.d
+mv $ORIG_BUILD_DIR/.heroku $1/.heroku
